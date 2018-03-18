@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: Ywm@mysql36
+    url: jdbc:mysql://36.41.187.107/sell?characterEncoding=utf-8&useSSL=false
+  jpa:
+    show-sql: true
+
+server:
+  context-path: /sell
+logging:
+  pattern:
+    console: "%d - %msg%n"
+  # path: /IntelliJProject/Sell/log/
+  file: /IDEAProject/Sell/log/sell.log
+  level:
+    com.jerry.sell.LoggerTest: debug
