@@ -35,7 +35,7 @@ public class ProductCategory {
     /**
      * 类目编号
      */
-    private int categoryType;
+    private Integer categoryType;
 
     private Date createTime;
 
@@ -44,7 +44,7 @@ public class ProductCategory {
     public ProductCategory() {
     }
 
-    public ProductCategory(String categoryName, int categoryType) {
+    public ProductCategory(String categoryName, Integer categoryType) {
         this.categoryName = categoryName;
         this.categoryType = categoryType;
     }

@@ -9,10 +9,3 @@ spring:
 
 server:
   context-path: /sell
-logging:
-  pattern:
-    console: "%d - %msg%n"
-  # path: /IntelliJProject/Sell/log/
-  file: /IDEAProject/Sell/log/sell.log
-  level:
-    com.jerry.sell.LoggerTest: debug
