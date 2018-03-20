@@ -1,7 +1,7 @@
 package com.jerry.sell.repository;
 
 import com.jerry.sell.dataobject.ProductInfo;
-import com.jerry.sell.enums.ProductInfoStatusEnum;
+import com.jerry.sell.enums.ProductStatusEnum;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,8 +13,6 @@ import javax.transaction.Transactional;
 import java.math.BigDecimal;
 import java.util.List;
 
-import static org.junit.Assert.*;
-
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class ProductInfoRepositoryTest {
@@ -23,7 +21,6 @@ public class ProductInfoRepositoryTest {
     private ProductInfoRepository repository;
 
     @Test
-    @Transactional
     public void saveTest() {
         ProductInfo productInfo = new ProductInfo();
         productInfo.setProductId("001");
@@ -32,7 +29,7 @@ public class ProductInfoRepositoryTest {
         productInfo.setProductStock(100);
         productInfo.setProductDescription("非常好喝");
         productInfo.setProductIcon("http://xxx.png");
-        productInfo.setProductStatus(ProductInfoStatusEnum.UP.getCode());
+        productInfo.setProductStatus(ProductStatusEnum.UP.getCode());
         productInfo.setCategoryType(1);
         ProductInfo result = repository.save(productInfo);
         Assert.assertNotNull(result);

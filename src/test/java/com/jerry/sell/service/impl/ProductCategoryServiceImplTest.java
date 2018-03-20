@@ -39,7 +39,6 @@ public class ProductCategoryServiceImplTest {
         Assert.assertNotEquals(0, result.size());
     }
 
-    @Transactional
     @Test
     public void save() throws Exception {
         ProductCategory productCategory = new ProductCategory("早晨热销", 4);

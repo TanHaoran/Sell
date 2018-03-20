@@ -1,7 +1,7 @@
 package com.jerry.sell.service.impl;
 
 import com.jerry.sell.dataobject.ProductInfo;
-import com.jerry.sell.enums.ProductInfoStatusEnum;
+import com.jerry.sell.enums.ProductStatusEnum;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,8 +14,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import javax.transaction.Transactional;
 import java.math.BigDecimal;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -44,7 +42,6 @@ public class ProductInfoServiceImplTest {
     }
 
     @Test
-    @Transactional
     public void save() {
         ProductInfo productInfo = new ProductInfo();
         productInfo.setProductId("001");
@@ -53,7 +50,7 @@ public class ProductInfoServiceImplTest {
         productInfo.setProductStock(100);
         productInfo.setProductDescription("非常好喝");
         productInfo.setProductIcon("http://xxx.png");
-        productInfo.setProductStatus(ProductInfoStatusEnum.UP.getCode());
+        productInfo.setProductStatus(ProductStatusEnum.UP.getCode());
         productInfo.setCategoryType(1);
         ProductInfo result = service.save(productInfo);
         Assert.assertNotEquals(null, result);

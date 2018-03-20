@@ -1,6 +1,7 @@
 package com.jerry.sell.service;
 
 import com.jerry.sell.dataobject.ProductInfo;
+import com.jerry.sell.dto.CartDTO;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -34,7 +35,17 @@ public interface ProductInfoService {
 
     ProductInfo save(ProductInfo productInfo);
 
-    // 加库存
+    /**
+     * 加库存
+     *
+     * @param cartDTOList
+     */
+    void increaseStock(List<CartDTO> cartDTOList);
 
-    // 减库存
+    /**
+     * 减库存
+     *
+     * @param cartDTOList
+     */
+    void decreaseStock(List<CartDTO> cartDTOList);
 }

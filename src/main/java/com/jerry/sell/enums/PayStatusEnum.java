@@ -6,18 +6,19 @@ import lombok.Getter;
  * Created with IntelliJ IDEA.
  * User: Jerry
  * Date: 2018/3/19
- * Time: 13:39
+ * Time: 16:58
  * Description:
  */
 @Getter
-public enum ProductInfoStatusEnum {
-    UP(0, "在架"),
-    DOWN(1, "下架");
+public enum PayStatusEnum {
+    WAIT(0, "等待支付"),
+    SUCCESS(1, "支付成功"),;
 
     private Integer code;
+
     private String msg;
 
-    ProductInfoStatusEnum(Integer code, String msg) {
+    PayStatusEnum(Integer code, String msg) {
         this.code = code;
         this.msg = msg;
     }

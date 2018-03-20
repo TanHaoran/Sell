@@ -28,7 +28,6 @@ public class ProductCategoryRepositoryTest {
     }
 
     @Test
-    @Transactional
     public void saveTest() {
         ProductCategory productCategory = new ProductCategory("孩子最爱", 3);
         ProductCategory result = repository.save(productCategory);
