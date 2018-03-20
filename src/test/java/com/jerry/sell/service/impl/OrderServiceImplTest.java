@@ -2,6 +2,8 @@ package com.jerry.sell.service.impl;
 
 import com.jerry.sell.dataobject.OrderDetail;
 import com.jerry.sell.dto.OrderDTO;
+import com.jerry.sell.enums.OrderStatusEnum;
+import com.jerry.sell.enums.PayStatusEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import org.junit.Test;
@@ -15,8 +17,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.*;
-
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @Slf4j
@@ -27,7 +27,7 @@ public class OrderServiceImplTest {
 
     private final String BUYER_OPEN_ID = "abc";
 
-    private final String ORDER_ID = "1521529826737636283";
+    private final String ORDER_ID = "1521554877186726798";
 
     @Test
     public void create() {
@@ -72,13 +72,22 @@ public class OrderServiceImplTest {
 
     @Test
     public void cancel() {
+        OrderDTO orderDTO = orderService.findOne(ORDER_ID);
+        OrderDTO result = orderService.cancel(orderDTO);
+        Assert.assertEquals(OrderStatusEnum.CANCEL.getCode(), result.getOrderStatus());
     }
 
     @Test
     public void finish() {
+        OrderDTO orderDTO = orderService.findOne(ORDER_ID);
+        OrderDTO result = orderService.finish(orderDTO);
+        Assert.assertEquals(OrderStatusEnum.FINISHED.getCode(), result.getOrderStatus());
     }
 
     @Test
     public void pay() {
+        OrderDTO orderDTO = orderService.findOne(ORDER_ID);
+        OrderDTO result = orderService.paid(orderDTO);
+        Assert.assertEquals(PayStatusEnum.SUCCESS.getCode(), result.getPayStatus());
     }
 }

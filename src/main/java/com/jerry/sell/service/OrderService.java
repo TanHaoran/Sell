@@ -60,5 +60,5 @@ public interface OrderService {
      * @param orderDTO
      * @return
      */
-    OrderDTO pay(OrderDTO orderDTO);
+    OrderDTO paid(OrderDTO orderDTO);
 }

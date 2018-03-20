@@ -3,6 +3,7 @@ package com.jerry.sell.dto;
 import com.jerry.sell.dataobject.OrderDetail;
 import lombok.Data;
 
+import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
@@ -16,6 +17,11 @@ import java.util.List;
  */
 @Data
 public class OrderDTO {
+
+    /**
+     * 订单id
+     */
+    private String orderId;
 
     /**
      * 买家姓名
