@@ -91,9 +91,9 @@ public class OrderServiceImpl implements OrderService {
 
         // 4、订单入库（OrderDetail）
         OrderMaster orderMaster = new OrderMaster();
+        orderDTO.setOrderId(orderId);
         BeanUtils.copyProperties(orderDTO, orderMaster);
         // 复制信息后，因为OrderDTO里面的部分属性是空，会将orderMaster中的部分属性置空，所以要重新赋值
-        orderMaster.setOrderId(orderId);
         orderMaster.setOrderAmount(orderAmount);
         orderMaster.setOrderStatus(OrderStatusEnum.NEW.getCode());
         orderMaster.setPayStatus(PayStatusEnum.WAIT.getCode());
